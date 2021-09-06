@@ -23,7 +23,7 @@ export class ChatController extends Component {
 
     async showHistory(values: number[]) {
         this.setState({
-            models: [MessageModel.createBotMessageModel(values)],
+            models: [MessageModel.createBotMessageModel(values.reverse())],
         });
     }
 

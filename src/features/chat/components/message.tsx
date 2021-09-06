@@ -9,8 +9,8 @@ export interface MessageProps {
 export class Message extends Component<MessageProps> {
 
     formatMessage(message: string[]) {
-        return message.map((text: string) => (
-            <p>{text}</p>
+        return message.map((text: string, i: number) => (
+            <p key={i}>{text}</p>
         ));
     }
 

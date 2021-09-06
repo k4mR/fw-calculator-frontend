@@ -1,3 +1,16 @@
-export const getHistoryAction = async (limit: number) => new Promise<number[]>(r => {
-    setTimeout(() => { r([1,2,3,4]); }, 1000)
-})
+
+export type HistoryResponse = {
+    content: number[]
+}
+
+export const getHistoryAction = async (limit: number): Promise<number[]> => {
+    const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/calc-bot/history/${limit}`,
+        {
+            method: 'GET',
+            redirect: 'follow'
+        }
+    );
+    const result: HistoryResponse = await response.json();
+    return result.content;
+}
