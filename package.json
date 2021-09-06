@@ -24,6 +24,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
     "@types/config": "0.0.39",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.23",

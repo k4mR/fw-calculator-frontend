@@ -1,25 +1,20 @@
-import { Component } from "react";
-import { InputFiled } from "./components/input-field";
-import { MessagesArea } from "./components/messages-area";
+import { Component } from 'react';
+import { InputFiled } from './components/input-field';
+import { MessagesArea } from './components/messages-area';
+import MessageModel from './models/message.model';
 
 export interface ChatContainerProps {
-    messages: string[],
+    models: MessageModel[],
     onSendMessage: Function,
-    sender: string,
 }
 
 export class ChatContainer extends Component<ChatContainerProps> {
     render() {
-        const { messages, sender, onSendMessage } = this.props;
+        const { models, onSendMessage } = this.props;
         return (
             <div className="flex flex-col h-screen w-screen bg-gray-200 p-8">
-                <MessagesArea
-                    messages={messages}
-                    sender={sender}
-                />
-                <InputFiled
-                    onSendMessage={onSendMessage}
-                />
+                <MessagesArea models={models} />
+                <InputFiled onSendMessage={onSendMessage} />
             </div>
         )
     }

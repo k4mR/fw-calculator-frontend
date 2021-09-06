@@ -1,4 +1,4 @@
-import { ChangeEvent, Component } from "react";
+import { ChangeEvent, Component } from 'react';
 
 export interface InputFieldProps {
     onSendMessage: Function;
@@ -6,7 +6,7 @@ export interface InputFieldProps {
 
 export class InputFiled extends Component<InputFieldProps> {
     state = {
-        text: ""
+        text: ''
     }
 
     onChange(event: ChangeEvent<HTMLInputElement>) {
@@ -15,7 +15,7 @@ export class InputFiled extends Component<InputFieldProps> {
 
     onSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        this.setState({ text: "" });
+        this.setState({ text: '' });
         this.props.onSendMessage(this.state.text);
     }
 
